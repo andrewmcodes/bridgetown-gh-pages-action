@@ -10,11 +10,12 @@ if [ "${INPUT_SITE_LOCATION}" != "." ]; then
   cd "${INPUT_SITE_LOCATION}"
 fi
 
-echo "== Installing Dependencies =="
-
+echo "== Installing Ruby Dependencies =="
 bundle config path vendor/bundle
-bundle install --jobs 4 --retry 3
-yarn install
+bundle install --jobs 4 --retry 3 --quiet
+
+echo "== Installing Node Dependencies =="
+yarn install --silent
 
 echo "== Running Production Build =="
 BRIDGETOWN_ENV=production NODE_ENV=production yarn webpack-build && yarn build
@@ -33,8 +34,8 @@ echo "Committing files..."
 git commit -m "${INPUT_COMMIT_MESSAGE}" >/dev/null 2>&1
 
 echo "== Deploying =="
-echo "Pushing... to $REMOTE_REPO $INPUT_DEFAULT_BRANCH:$INPUT_DEPLOY_BRANCH"
-git push --force "$REMOTE_REPO" "$INPUT_DEFAULT_BRANCH":"$INPUT_DEPLOY_BRANCH"
+echo "Pushing... to $REMOTE_REPO HEAD:$INPUT_DEPLOY_BRANCH"
+git push --force "$REMOTE_REPO" HEAD:"$INPUT_DEPLOY_BRANCH"
 
 echo "== Cleanup =="
 rm -fr .git
