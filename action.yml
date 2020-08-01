@@ -20,10 +20,6 @@ inputs:
     description: "Location of your Bridgetown generated site."
     required: false
     default: "./output"
-  default_branch:
-    description: "The name of your default branch."
-    required: false
-    default: "main"
   deploy_branch:
     description: "Branch name to push the site to."
     required: false
