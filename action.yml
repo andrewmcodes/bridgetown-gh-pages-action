@@ -20,18 +20,10 @@ inputs:
     description: "Location of your Bridgetown generated site."
     required: false
     default: "./output"
-  default_branch:
-    description: "The name of your default branch."
-    required: false
-    default: "main"
   deploy_branch:
     description: "Branch name to push the site to."
     required: false
     default: "gh-pages"
-  ruby_version:
-    description: "The Ruby version you want to use to build the site."
-    required: false
-    default: "2.7.1"
   commit_message:
     description: "The commit message that will be used when deploying."
     required: false
@@ -47,5 +39,4 @@ runs:
     - ${{ inputs.site_location }}
     - ${{ inputs.build_location }}
     - ${{ inputs.deploy_branch }}
-    - ${{ inputs.ruby_version }}
     - ${{ inputs.commit_message }}
