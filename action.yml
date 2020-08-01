@@ -39,7 +39,7 @@ inputs:
 
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "dockerfiles/Dockerfile-${{ inputs.ruby_version }}"
   args:
     - ${{ inputs.repository }}
     - ${{ inputs.github_actor }}
@@ -47,5 +47,4 @@ runs:
     - ${{ inputs.site_location }}
     - ${{ inputs.build_location }}
     - ${{ inputs.deploy_branch }}
-    - ${{ inputs.ruby_version }}
     - ${{ inputs.commit_message }}
