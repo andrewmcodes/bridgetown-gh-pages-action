@@ -28,10 +28,6 @@ inputs:
     description: "Branch name to push the site to."
     required: false
     default: "gh-pages"
-  ruby_version:
-    description: "The Ruby version you want to use to build the site."
-    required: false
-    default: "2.7.1"
   commit_message:
     description: "The commit message that will be used when deploying."
     required: false
@@ -39,7 +35,7 @@ inputs:
 
 runs:
   using: "docker"
-  image: "dockerfiles/Dockerfile-${{ inputs.ruby_version }}"
+  image: "Dockerfile"
   args:
     - ${{ inputs.repository }}
     - ${{ inputs.github_actor }}
