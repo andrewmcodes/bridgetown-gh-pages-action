@@ -1,3 +1,4 @@
+ARG INPUT_RUBY_VERSION
 FROM ruby:$INPUT_RUBY_VERSION-alpine
 
 # Set default locale for the environment
