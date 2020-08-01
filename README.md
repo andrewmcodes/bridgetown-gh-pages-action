@@ -1,6 +1,8 @@
-# bridgetown-gh-pages-action
-
-> A GitHub Action for building and deploying a Bridgetown site to GitHub Pages.
+<div align="center">
+  <img alt="Banner" width="100%" src="media/banner.png" />
+  <h1>bridgetown-gh-pages-action</h1>
+  <p>A GitHub Action for building and deploying a <a href="https://www.bridgetownrb.com" target="_blank">Bridgetown site</a> to GitHub Pages.</p>
+</div>
 
 ## Getting Started
 
