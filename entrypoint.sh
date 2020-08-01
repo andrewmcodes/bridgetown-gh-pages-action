@@ -2,8 +2,6 @@
 
 set -e
 
-ruby -v
-
 echo "== Installing Dependencies =="
 cd ${INPUT_SITE_LOCATION}
 gem install bundler
