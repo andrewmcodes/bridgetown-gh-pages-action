@@ -1,5 +1,6 @@
-ARG INPUT_RUBY_VERSION
-FROM ruby:$INPUT_RUBY_VERSION-alpine
+FROM ruby:2.7.1-alpine
+RUN echo "$INPUT_RUBY_VERSION"
+RUN printenv
 
 # Set default locale for the environment
 ENV LC_ALL C.UTF-8
