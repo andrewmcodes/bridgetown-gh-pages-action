@@ -2,7 +2,7 @@ name: "Bridgetown Github Pages Action"
 description: "A GitHub Action to Deploy your Bridgetown site to GitHub Pages."
 branding:
   icon: "box"
-  color: "green"
+  color: "blue"
 
 inputs:
   repository:

@@ -10,7 +10,7 @@ This is intended to be an out-of-the-box solution for deploying your [Bridgetown
 
 ```yml
 - name: Build & Deploy to GitHub Pages
-  uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.1
+  uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.1
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.1
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository: andrewmcodes/bridgetown-gh-pages-action
@@ -140,22 +140,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Changelog
+## Demo
 
-[View our Changelog][changelog]
+[bridgetown-gh-pages-starter](https://github.com/andrewmcodes/bridgetown-gh-pages-starter)
+
+This starter can be used to reproduce issues as well as provide an example of the plugin's usage.
+
+You can view the live version at: [andrewmcodes.github.io/bridgetown-gh-pages-starter](https://andrewmcodes.github.io/bridgetown-gh-pages-starter/).
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!
-
-Please make sure you read the [Contributing Guide][contributing] before getting started!
-
-## Code of Conduct
-
-[Code of Conduct][coc]
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/andrewmcodes/bridgetown-gh-pages-tag/issues). You can also take a look at the [contributing guide](https://github.com/andrewmcodes/bridgetown-gh-pages-tag/blob/main/CONTRIBUTING.md).
 
 ## License
 
-Copyright © 2020 [Andrew Mason](https://github.com/andrewmcodes).
-<br />
-This project is [MIT](https://github.com/andrewmcodes/bridgetown-gh-pages-action/blob/main/LICENSE) licensed.
+This plugin is released under the [MIT License](LICENSE).
