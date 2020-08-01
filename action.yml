@@ -1,0 +1,47 @@
+name: "Bridgetown Github Pages Action"
+description: "A GitHub Action to Deploy your Bridgetown site to GitHub Pages."
+inputs:
+  repository:
+    description: "The GitHub repository to push the built site to."
+    required: false
+    default: ${{ github.repository }}
+  github_actor:
+    description: "Name of the deploy actor."
+    required: false
+    default: ${{ github.actor }}
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}.'
+    required: true
+  site_location:
+    description: "Location of the Bridgetown project within your repo."
+    required: false
+    default: "."
+  build_location:
+    description: "Location of your Bridgetown generated site."
+    required: false
+    default: "./output"
+  deploy_branch:
+    description: "Branch name to push the site to."
+    required: false
+    default: "gh-pages"
+  ruby_version:
+    description: "The Ruby version you want to use to build the site."
+    required: false
+    default: "2.7.1"
+  commit_message:
+    description: "The commit message that will be used when deploying."
+    required: false
+    default: "chore: deploy site"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.repository }}
+    - ${{ inputs.github_actor }}
+    - ${{ inputs.github_token }}
+    - ${{ inputs.site_location }}
+    - ${{ inputs.build_location }}
+    - ${{ inputs.deploy_branch }}
+    - ${{ inputs.ruby_version }}
+    - ${{ inputs.commit_message }}

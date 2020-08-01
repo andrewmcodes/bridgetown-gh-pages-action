@@ -1,0 +1,25 @@
+name: Changelog
+
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  changelog:
+    name: Changelog Entry Action
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    if: "!contains(github.event.head_commit.message, '[nodoc]')"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          git-message: "chore(release): :bookmark: {version} [nodoc]"
+          git-user-name: "Andrew Mason"
+          git-user-email: "andrewmcodes@protonmail.com"
+          preset: "angular"
+          tag-prefix: "v"
+          version-file: "./version.toml"
+          release-count: 0
