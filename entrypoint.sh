@@ -17,7 +17,8 @@ NODE_ENV=production yarn webpack-build && yarn build
 echo "\n== Committing Changes ==\n"
 cd ${INPUT_BUILD_LOCATION}
 remote_repo="https://${INPUT_GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_REPOSITORY}.git" && \
-deploy_branch=${INPUT_DEPLOY_BRANCH}
+deploy_branch=${INPUT_DEPLOY_BRANCH} && \
+default_branch=${INPUT_DEFAULT_BRANCH}
 git init
 git config user.name "${INPUT_GITHUB_ACTOR}"
 git config user.email "${INPUT_GITHUB_ACTOR}@users.noreply.github.com"
@@ -29,8 +30,8 @@ echo "Committing files..."
 git commit -m "${INPUT_COMMIT_MESSAGE}" > /dev/null 2>&1
 
 echo "\n== Deploying ==\n"
-echo "Pushing... to $remote_repo main:$deploy_branch"
-git push --force $remote_repo main:$deploy_branch > /dev/null 2>&1
+echo "Pushing... to $remote_repo $default_branch:$deploy_branch"
+git push --force $remote_repo $default_branch:$deploy_branch > /dev/null 2>&1
 
 echo "\n== Cleanup ==\n"
 rm -fr .git

@@ -11,6 +11,7 @@
 | github_actor   | String | false     | `${{ github.actor }}`      | Name of the deploy actor.                                                |
 | site_location  | String | false     | `.`                        | Location of the Bridgetown project within your repo.                     |
 | build_location | String | false     | `./output`                 | Location of your Bridgetown generated site.                              |
+| default_branch | String | false     | `main`                     | The name of your default branch.                                         |
 | deploy_branch  | String | false     | `gh-pages`                 | Branch name to push the site to.                                         |
 | ruby_version   | String | false     | `2.7.1`                    | The Ruby version you want to use to build the site.                      |
 | commit_message | String | false     | `chore: deploy site`       | The commit message that will be used when deploying.                     |
