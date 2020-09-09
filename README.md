@@ -152,6 +152,22 @@ You can view the live version at: [andrewmcodes.github.io/bridgetown-gh-pages-st
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/andrewmcodes/bridgetown-gh-pages-tag/issues). You can also take a look at the [contributing guide](https://github.com/andrewmcodes/bridgetown-gh-pages-tag/blob/main/CONTRIBUTING.md).
 
+## Releasing
+
+### Update Changelog
+
+**Update**
+
+```sh
+conventional-changelog -p angular -i CHANGELOG.md -s
+```
+
+**Regenerate**
+
+```sh
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
 ## License
 
 This plugin is released under the [MIT License](LICENSE).

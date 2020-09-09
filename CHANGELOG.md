@@ -1,6 +1,11 @@
 # [](https://github.com/andrewmcodes/bridgetown-gh-pages-action/compare/v0.0.3...v) (2020-09-09)
 
 
+### Features
+
+* add changelog ([e56edac](https://github.com/andrewmcodes/bridgetown-gh-pages-action/commit/e56edacc8b272772ff508b83d7497b18be699879))
+
+
 
 ## [0.0.3](https://github.com/andrewmcodes/bridgetown-gh-pages-action/compare/v0.0.2...v0.0.3) (2020-09-09)
 
