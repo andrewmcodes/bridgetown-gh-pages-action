@@ -21,8 +21,11 @@ yarn install --silent
 printf "\n\nRunning Production Build...\n"
 BRIDGETOWN_ENV=production NODE_ENV=production yarn webpack-build && yarn build
 
-printf "\nCommitting Changes...\n"
+printf "\n\nCreating .nojekyll File...\n"
 cd "${INPUT_BUILD_LOCATION}"
+touch .nojekyll
+
+printf "\nCommitting Changes...\n"
 git init
 git config user.name "${INPUT_GITHUB_ACTOR}"
 git config user.email "${INPUT_GITHUB_ACTOR}@users.noreply.github.com"
