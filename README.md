@@ -10,7 +10,7 @@ This is intended to be an out-of-the-box solution for deploying your [Bridgetown
 
 ```yml
 - name: Build & Deploy to GitHub Pages
-  uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
+  uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.2
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository: andrewmcodes/bridgetown-gh-pages-action
