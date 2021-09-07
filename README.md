@@ -168,6 +168,13 @@ conventional-changelog -p angular -i CHANGELOG.md -s
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
+## Extras
+
+### Deploy on Github Pages with Custom Domain.
+
+If you are following the [github documentation for add your custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site), GitHub adds the **CNAME** file in the `gh-pages` branch but it will get removed everytime you deploy your web page, to solve this issue, add the **CNAME** file into the **src/** folder and it will be deployed as expected.
+
+
 ## License
 
 This plugin is released under the [MIT License](LICENSE).
