@@ -1,3 +1,13 @@
+# 🚨 Archived
+
+
+This action has been replaced by [Bridgetown v1.0's `gh-pages` bundled configuration](https://www.bridgetownrb.com/docs/bundled-configurations#github-pages-configuration) and has been archived. It will not be receiving any future updates and it is highly advised that you migrate to the action that Bridgetown now provides. 
+
+I have provided a tutorial for using the new action provided by Bridgetown below:
+
+[➡️ How to Deploy Your Bridgetown Site to Github Pages (2022)](https://andrewm.codes/deploy-bridgetown-to-github-pages/)
+
+Thank you to everyone who contributed their thoughts, time, and code to this project ❤️
 <div align="center">
   <img alt="Banner" width="100%" src="media/banner.png" />
   <h1>bridgetown-gh-pages-action</h1>
