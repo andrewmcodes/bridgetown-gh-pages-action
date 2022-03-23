@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:2.7.3-alpine
 
 ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
@@ -10,10 +10,8 @@ RUN apk --no-cache add build-base git; \
   nodejs-npm \
   yarn
 
-# This is our entrypoint to our custom scripts
-# more about that in a sec
+# Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
-# Use the entrypoint.sh file as the container entrypoint
-# when Github executes our Docker container
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+ENTRYPOINT ["/entrypoint.sh"]

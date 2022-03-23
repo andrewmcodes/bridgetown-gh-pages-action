@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -l
 
 # Exit immediately if a pipeline returns a non-zero status.
 set -e
@@ -19,7 +19,7 @@ printf "\nInstalling Node Dependencies..."
 yarn install --silent
 
 printf "\n\nRunning Production Build...\n"
-BRIDGETOWN_ENV=production NODE_ENV=production yarn webpack-build && yarn build
+yarn deploy
 
 printf "\n\nCreating .nojekyll File...\n"
 cd "${INPUT_BUILD_LOCATION}"

@@ -9,7 +9,6 @@ I have provided a tutorial for using the new action provided by Bridgetown below
 
 Thank you to everyone who contributed their thoughts, time, and code to this project ❤️
 <div align="center">
-  <img alt="Banner" width="100%" src="media/banner.png" />
   <h1>bridgetown-gh-pages-action</h1>
   <p>A GitHub Action for building and deploying a <a href="https://www.bridgetownrb.com" target="_blank">Bridgetown site</a> to GitHub Pages.</p>
 </div>
@@ -20,12 +19,14 @@ This is intended to be an out-of-the-box solution for deploying your [Bridgetown
 
 ```yml
 - name: Build & Deploy to GitHub Pages
-  uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
+  uses: andrewmcodes/bridgetown-gh-pages-action@v0.1.0
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**:rotating_light: IMPORTANT** Due to the way GitHub Actions work, you cannot pass in a Ruby version to the Docker container that gets built (or at least I can't find a way). **Due to this, this action will build your site with Ruby 2.7.1**. If you cannot upgrade your Ruby version for some reason, I suggest forking this action and adding the Ruby version you need in the Dockerfile, or using a [manual solution](#manual-solution).
+**:rotating_light: IMPORTANT** Due to the way GitHub Actions work, you cannot pass in a Ruby version to the Docker container that gets built (or at least I can't find a way). **Due to this, this action will build your site with Ruby 2.7.3**.
+
+If you cannot upgrade/downgrade your Ruby version & the output is different on 2.7.3, I suggest forking this action and adding the Ruby version you need in the Dockerfile, or using a [manual solution](#manual-solution).
 
 ## Usage
 
@@ -45,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -66,7 +67,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build & Deploy to GitHub Pages
-        uses: andrewmcodes/bridgetown-gh-pages-action@v0.0.3
+        uses: andrewmcodes/bridgetown-gh-pages-action@v0.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository: andrewmcodes/bridgetown-gh-pages-action
@@ -125,7 +126,7 @@ jobs:
       - name: Set up Ruby 2.7
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.1
+          ruby-version: 2.7.3
       - name: Cache gems
         uses: actions/cache@v1
         with:
